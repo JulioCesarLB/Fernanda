@@ -1,0 +1,76 @@
+<header>
+  <div class="header-top">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo" />
+      <span>CredFácil</span>
+    </div>
+
+    <nav>
+      <a href="#form">Simular Empréstimo</a>
+      <a href="#funcionamento">Como Funciona</a>
+      <a href="#">Segurança</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <h1>é confiável?</h1>
+      <p>
+        Antes de contratar um crédito, verifique se é confiável e seguro. Evite golpes e prejuízos!
+      </p>
+    </div>
+
+    <a href="#form"><div class="verify-button">VERIFICAR</div></a>
+  </div>
+</header>
+
+<main>
+  <section class="funcionamento" id="funcionamento">
+    <h2>Como funciona?</h2>
+  </section>
+  <section class="formulario" id="form" >
+    <h2>Formulário de cadastro</h2>
+    <div class="form" >
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label>Nome:</label>
+      <input formControlName="nome" />
+
+      <label>CNPJ:</label>
+      <input formControlName="cnpj" />
+
+      <label>Valor:</label>
+      <input formControlName="valor" type="number" />
+
+      <button type="submit">Enviar</button>
+    </form>
+</div>
+
+  </section>
+
+  <section class="resultados">
+    <div *ngIf="showResults" class="resultado">
+      <h3>Nota: {{ nota }}</h3>
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let pergunta of perguntas; let i = index">{{pergunta}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td *ngFor="let pergunta of perguntas; let i = index">{{ respostas[i] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+</main>
+<footer id="contato">
+  <h2>Contato</h2>
+  <div>
+    <a href="https://www.linkedin.com/in/fernanda-farias-2a795b236/"><img width="50" height="50" src="https://img.icons8.com/ios/50/linkedin.png" alt="linkedin"/>Fernanda Farias </a>
+    <a href="https://www.linkedin.com/in/luiza-jimenez/"><img width="50" height="50" src="https://img.icons8.com/ios/50/linkedin.png" alt="linkedin"/>Luiza Jimenez</a>
+  </div>
+</footer>
