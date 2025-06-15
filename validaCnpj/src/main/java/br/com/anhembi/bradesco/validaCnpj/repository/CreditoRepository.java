@@ -9,7 +9,7 @@ import br.com.anhembi.bradesco.validaCnpj.model.AnaliseCredito;
 
 
 @Repository
-public interface EntidadeConsultadaRepository extends JpaRepository<AnaliseCredito, Long>{
+public interface CreditoRepository extends JpaRepository<AnaliseCredito, Long>{
 	public List<AnaliseCredito> findByCpfCnpj(String cpfCnpj);
 
 }

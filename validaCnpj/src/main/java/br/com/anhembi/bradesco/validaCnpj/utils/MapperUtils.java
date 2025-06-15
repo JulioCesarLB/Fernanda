@@ -27,8 +27,8 @@ public  class MapperUtils {
 		
 		return retorno;
 	}
-	public static EntidadeConsultaDTO convertToDTO(AnaliseCredito entidade) {
-		return modelMapper.map(entidade, EntidadeConsultaDTO.class);
+	public static EntidadeConsultaDTO convertToDTO(AnaliseCredito credito) {
+		return modelMapper.map(credito, EntidadeConsultaDTO.class);
 	}
 	
 	public static AnaliseCredito convertToModel(Long id, EntidadeConsultaDTO dto) {

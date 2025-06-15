@@ -25,9 +25,6 @@ public class AnaliseEntidade extends AbstractEntity<Long>  {
 	@Column(name = "dividas", nullable = false)
 	private Boolean possuiDividas;
 	
-	@Column(name = "cpf_cnpj_valido", nullable = false)
-	private Boolean cpfCnpjValido;
-	
 	@Column(name = "endereco_real", nullable = false)
 	private Boolean enderecoReal;
 	
@@ -37,15 +34,9 @@ public class AnaliseEntidade extends AbstractEntity<Long>  {
 	@Column(name = "processo_aberto", nullable = false)
 	private Boolean possuiProcessoAberto;
 	
-	@Column(name = "reclamacoes", nullable = false)
-	private Boolean muitasReclamacoes;
-	
-	@Column(name = "boa_reputacao", nullable = false)
-	private Boolean boaReputacao;
-	
-	@Column(name = "informacoes_claras_taxacoes", nullable = false)
-	private Boolean possuiInformacoesClarasSobreTaxacoes;
-	
+	@Column(name = "bom_historico_pagamento", nullable = false)
+	private Boolean bomHistoricoDePagamento;
+
 	@Column(name = "bom_score_credito", nullable = false)
 	private Boolean possuiBomScoreDeCredito;
 	

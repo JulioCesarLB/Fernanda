@@ -6,71 +6,145 @@
     </div>
 
     <nav>
-      <a href="#form">Simular Empréstimo</a>
+      <a href="#form">Solicitar Empréstimo</a>
       <a href="#funcionamento">Como Funciona</a>
-      <a href="#">Segurança</a>
+      <a href="#segurança">Segurança</a>
       <a href="#contato">Contato</a>
     </nav>
   </div>
 
   <div class="container">
     <div class="hero-content">
-      <h1>é confiável?</h1>
-      <p>
-        Antes de contratar um crédito, verifique se é confiável e seguro. Evite golpes e prejuízos!
-      </p>
+      <h1>Precisa de crédito rápido e confiável?</h1>
+      <p>Com a CredFácil, suas informações são analisadas com segurança em fontes confiáveis, aumentando suas chances de aprovação com agilidade e transparência.</p>
+      <p>🔒 Segurança para você. Confiança para quem aprova. </p>
+     
     </div>
 
-    <a href="#form"><div class="verify-button">VERIFICAR</div></a>
+    <a href="#form">
+      <div class="verify-button">VERIFICAR</div>
+    </a>
   </div>
 </header>
 
 <main>
   <section class="funcionamento" id="funcionamento">
     <h2>Como funciona?</h2>
+    <div class="processo">
+      <div class="item">
+        <img width="150" height="150" src="assets/imagens/cadastro.png" alt="cadastro" />
+        <h3><strong>Cadastro</strong> dos Dados</h3>
+        <p>O usuário informa os dados básicos como CPF/CNPJ e valor solicitado para iniciar a análise de crédito.</p>
+      </div>
+      <img width="100" height="100" src="assets/imagens/seta.png" alt="cadastro" />
+      <div class="item">
+        <img width="150" height="150" src="assets/imagens/analisar.png" alt="cadastro" />
+        <h3><strong>Análise</strong> e Geração de Score</h3>
+        <p>A CredFácil consulta fontes confiáveis e calcula um score individual por fonte, gerando uma média precisa.</p>
+      </div>
+      <img width="100" height="100" src="assets/imagens/seta.png" alt="cadastro" />
+      <div class="item">
+        <img width="150" height="150" src="assets/imagens/fila.png" alt="cadastro" />
+        <h3><strong>Fila</strong> Inteligente</h3>
+        <p>Com base no score médio, a solicitação é priorizada em uma fila automática, agilizando o processo de avaliação.</p>
+      </div>
+    </div>
+
   </section>
-  <section class="formulario" id="form" >
-    <h2>Formulário de cadastro</h2>
-    <div class="form" >
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <label>Nome:</label>
-      <input formControlName="nome" />
+  <section class="formulario" id="form">
+    <h2>Solicitar crédito</h2>
+    <div class="form">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <label>Nome:</label>
+        <input formControlName="nome" />
 
-      <label>CNPJ:</label>
-      <input formControlName="cnpj" />
+        <label>CPF/CNPJ:</label>
+        <input mask="000.000.000-00||00.000.000/0000-00" formControlName="cnpj" />
 
-      <label>Valor:</label>
-      <input formControlName="valor" type="number" />
+        <label>Valor:</label>
+        <input formControlName="valor" type="number" />
 
-      <button type="submit">Enviar</button>
-    </form>
-</div>
+        <button  type="submit">Enviar</button>
+      </form>
+    </div>
 
   </section>
 
-  <section class="resultados">
+  <section id="resultados" class="resultados">
     <div *ngIf="showResults" class="resultado">
-      <h3>Nota: {{ nota }}</h3>
+   
+      <div class="result" [ngClass]="{green: nota>=70, yellow:(nota<70 && nota>40), red : nota<40 }">
+        <h3 class="frase">{{frase}}</h3>
+        <h3 class="score">⭐Score: {{ nota }}⭐</h3>
+        <h3 class="valor">💰Valor Solicitado: {{valor}} R$💰</h3>
+        <h3 class="fila">🙎‍♀️Sua posição na fila é: {{fila}}º🙎‍♂️</h3>
+      </div>
+      <h2>Resultados</h2>
       <table>
         <thead>
           <tr>
-            <th *ngFor="let pergunta of perguntas; let i = index">{{pergunta}}</th>
+            <th *ngFor="let pergunta of perguntas; let i = index">{{pergunta.pergunta}}</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td *ngFor="let pergunta of perguntas; let i = index">{{ respostas[i] }}</td>
+          <tr *ngFor="let resposta of respostas; let i = index">
+            <td *ngFor="let pergunta of perguntas; let i = index">{{ obterValorDados(resposta,pergunta.id)}}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
-  
+  <section id="segurança" class="segurança">
+    <h2>Segurança</h2>
+
+    <div class="texto">
+    <div class="paragrafo">
+      <h3>CredFácil — Segurança Inteligente para Solicitações de Empréstimo</h3>
+      <p>Em um cenário onde fraudes e inadimplência ameaçam tanto clientes quanto instituições financeiras, a CredFácil surge como aliada estratégica, oferecendo soluções robustas de validação e análise de crédito com segurança.</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="explicativo">
+    <div class="paragrafo">
+      <h3>Para o Cliente: Empréstimos com Mais Confiança</h3>
+      <p>Na CredFácil, garantimos que cada solicitação de empréstimo seja validada de forma segura e confiável, protegendo os dados e o futuro do cliente:</p>
+      <ul>
+        <li>Proteção de dados pessoais com tecnologia de ponta</li>
+        <li>Validação automatizada de identidade e documentos</li>
+        <li>Redução de riscos de fraudes e golpes financeiros</li>
+        <li>Mais agilidade na aprovação do crédito com segurança</li>
+      </ul>
+      <p>Com a CredFácil, o cliente tem a certeza de estar lidando com um processo justo, transparente e confiável.</p>
+    </div>
+    <div class="paragrafo">
+      <h3>Para o Banco ou Instituição Financeira: Menos Riscos, Mais Eficiência</h3>
+      <p>Nossa plataforma foi desenvolvida para proteger operações de crédito e aumentar a confiabilidade nas análises, permitindo que sua empresa:</p>
+      <ul>
+        <li>Reduza drasticamente a fraude em solicitações de empréstimo</li>
+        <li>Automatize a validação de CNPJ, CPF, documentos e informações cadastrais</li>
+        <li>Tome decisões baseadas em dados reais e verificados</li>
+      </ul>
+      <p>CredFácil é a ponte entre a agilidade digital e a segurança que o setor financeiro exige.</p>
+    </div>
+  </div>
+    <br>
+    <br>
+    <br>
+    <div class="paragrafo">
+     <p>Seja para quem busca crédito, seja para quem oferece, segurança não é opcional — é essencial. Com a CredFácil, cada solicitação passa por um processo de validação rigoroso, garantindo confiança, proteção e credibilidade para todos os envolvidos.</p>
+     <p>🚀 Aumente a confiança no seu processo de crédito com a tecnologia da CredFácil.
+Entre em contato e descubra como podemos ajudar sua instituição a crescer com segurança.</p>
+    </div>
+  </div>
+  </section>
 </main>
 <footer id="contato">
   <h2>Contato</h2>
   <div>
-    <a href="https://www.linkedin.com/in/fernanda-farias-2a795b236/"><img width="50" height="50" src="https://img.icons8.com/ios/50/linkedin.png" alt="linkedin"/>Fernanda Farias </a>
-    <a href="https://www.linkedin.com/in/luiza-jimenez/"><img width="50" height="50" src="https://img.icons8.com/ios/50/linkedin.png" alt="linkedin"/>Luiza Jimenez</a>
+    <a href="https://www.linkedin.com/in/fernanda-farias-2a795b236/" target="_blank"><img width="50" height="50"
+        src="assets/imagens/linkedin.png" alt="linkedin" />Fernanda Farias </a>
+    <a href="https://www.linkedin.com/in/luiza-jimenez/" target="_blank"><img width="50" height="50" src="assets/imagens/linkedin.png"
+        alt="linkedin" />Luiza Jimenez</a>
   </div>
 </footer>

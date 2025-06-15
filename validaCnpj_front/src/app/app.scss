@@ -66,7 +66,7 @@ header {
 
   .hero-content {
     h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: bold;
       color: #ffffff;
       margin-bottom: 15px;
@@ -74,26 +74,29 @@ header {
 
     p {
       color: #cccccc;
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin:  0 auto;
+      margin-bottom: 3rem;
+      
     }
   }
 
   .verify-button {
     background: radial-gradient(circle, #f85bb7 0%, #f85bb7 100%);
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 270px;
+    height: 270px;
     box-shadow: 0 0 20px #f85bb7a4;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 3rem;
     
 
     &:hover {
@@ -126,59 +129,277 @@ header {
 
 
 main{
+  strong{
+        color: #f85bb7;
+      }
+  h2{
+    justify-self: center;
+    font-size: 2.5rem;
+    margin: 3rem 0 2rem 0;
+    text-transform: uppercase;
+ 
+  }
 .funcionamento{
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
-  padding: 2rem;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  padding: 1rem 20%;
   background-color:#491433 ;
   color: #ffffff;
   font-family: Arial, sans-serif;
+  .processo{
+    
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 6rem 0;
+    justify-content: space-around;
+    align-items: center;
+
+    .item{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 20%;
+      
+      img{
+        margin-bottom: 1rem;
+      }
+      h3{
+        text-align: center;
+        margin-bottom: 1rem;
+        
+        font-size: 1.5rem;
+      }
+      p{
+        word-wrap: break-word;
+        width: 100%;
+        font-size: 1.1rem;
+        letter-spacing: 1.5px;
+        text-align: center;
+      }
+    }
+  }
 }
 .formulario {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 80vh;
+  height: auto;
   padding: 5rem;
   color: #ffffff;
-  font-family: Arial, sans-serif;
   background: linear-gradient(to top, #000000, #491433);
   .form{ 
-    width: 100%;
+    min-width: 60%;
+    margin: 5rem 0;
     label {
       display: block;
       margin-top: 10px;
+      font-size: 1.5rem;
     }
 
     input {
+      text-align: center;
       width: 100%;
-      padding: 1rem;
-      margin-top: 5px;
+      padding: 1.3rem;
+      margin-top: 1rem;
+      margin-bottom: 4rem;
       background-color: #007bff00;
+      border: none;
       border-color: #ffffff;
+      border-bottom: 1px solid #ffffff;
       border-radius: 0.5rem;
       color: #ffffff;
+      font-size: 1.8rem;
+    }
+    input:hover{
+      transition: transform 0.3s;
+      border-bottom: 2px solid #ffffff;
+    }
+    input:focus{
+      outline: none;
+      border-bottom: 2px solid #ffffff;
     }
 
     button {
-      margin-top: 15px;
+      display: block;
+      justify-self: center;
+      margin-top: 5rem;
       padding: 8px 12px;
-      background-color: #007bff;
+      background-color: #f85bb7;
+      width: 400px;
+      height: 130px;
       color: white;
       border: none;
+      border-radius: 230px;
+      font-size: 1.8rem;
+      transition: transform 0.3s ;
       cursor: pointer;
+    }
+    button:hover{
+      background-color: #ee249a;
+      transform: scale(1.1);
+      transition: transform 0.3s ;
     }
   }
 }
 
 .resultado {
-  height: 100vh;
-  background: linear-gradient(to bottom, #000000, #491433);
-  padding: 3rem;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #000000, #491433) ;
+  padding: 2rem;
   color:#ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  table{
+    display: block;
+    max-width: 100%;
+    margin-bottom: 10rem;
+    overflow-x: auto;
+  }
+  table tr:nth-child(even) {
+  background-color: rgb(160, 54, 104); 
+  } 
+
+  table tr:nth-child(odd) {
+    background-color: rgb(90, 18, 52); 
+  }
+  th{
+    font-size: 1.5rem;
+  }
+  tr{
+   border: 1px solid #ffff;
+  }
+  table tr:hover{
+    background-color: rgb(48, 6, 25); 
+  }
+  td{
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+ 
+  .result{
+    background: radial-gradient(circle, #f85bb7 0%, #f85bb7 100%);
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    width: 35rem;
+    height: 35rem;
+    padding: 10rem 3rem;
+    
+    box-shadow: 0 0 20px #f85bb7a4;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 5rem;
+
+    .score{
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .frase, .valor{
+      width: 100%;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .fila{
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    
+    
+  }
+  .red{
+    background: radial-gradient(circle, #a51515 0%, #a51515 100%);
+    box-shadow: 0 0 20px #500a0a;
+  }
+  .yellow{
+    background: radial-gradient(circle, #f0c60b 0%, #f0c60b 100%);
+    box-shadow: 0 0 20px #a18401;
+  }
+
+  .green{
+    background: radial-gradient(circle, #00a100 0%, #00a100 100%);
+    box-shadow: 0 0 20px #004200;
+  }
+}
+.segurança{
+  border-top: 1px solid #ffff;
+  background: linear-gradient(to left, #0000006b, #000000), url('../assets/imagens/mao.jpg') no-repeat left center;
+  background-size: cover;
+  padding: 5rem;
+  color:#ffffff;
+  min-height: 100vh;
+  .texto{
+    margin-top: 5rem;
+    margin-left: 1%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .paragrafo{
+      max-width: 75%;
+    }
+    .explicativo{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .paragrafo{
+        width: 30%;
+        min-height: 30rem;
+        border: 1px solid #ffff;
+        border-radius: 5rem;
+        padding: 3rem;
+      }
+    }
+    
+  }
+  h3{
+    border-bottom: 1px solid #ffff;
+    padding: 0.5rem;
+    color: #f85bb7;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+  p{
+    word-wrap: break-word;
+    width: 100%;
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+    margin: 1rem 0px;
+  }
+  li{
+    margin-left: 2%;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+  }
 }
 
 table {
@@ -197,6 +418,7 @@ footer{
   flex-direction: column;
   align-items: center;
   height: 20vh;
+  border-top: 1px solid #ffff;
   background-color:#491433 ;
   color: #ffffff;
   font-family: Arial, sans-serif;
@@ -208,9 +430,20 @@ footer{
       color: #ffffff;
       display: flex;
       align-items: center;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      font-size: 2rem;
+      img{
+        margin-right: 1rem;
+      }
     }
     a:hover{
       color: #f85bb7;
     }
+  }
+  h2{
+    font-size: 2.5rem;
+     text-transform: uppercase;
+    margin: 3rem 0 2rem 0;
   }
 }
